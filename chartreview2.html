@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+        <style>
+            
+            
+            .container {
+                width: 90%;
+                margin: auto;
+            }
+            
+            textarea {
+                overflow: hidden;
+                width: 100%;
+            }
+
+            @media print {
+                .container {
+                    width: 100%;
+                    margin: 0;
+                    font-size: 11px;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Cyber</th>
+                        <th>(+)</th>
+                        <th>(-)</th>
+                        <th>(NA)</th>
+                        <th>Reviewer's Comment</th>
+                        <th>CM Comment</th>
+                        <th>Supervisor's Comment</th>
+                        <th>QAPI's Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C1</td>
+                        <td>CFT matches the date based on PN as of (11/2015)</td>
+                        <td>
+                            <input type="radio" name="cft" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="cft" value="-1">
+                        </td>
+                        <td>
+                            <input type="radio" name="cft" value="0">
+                        </td>
+                        <td>
+                            <textarea readonly>This is a very long comment.
+This is another very long comment.
+Yet another very long comment.
+Long comments habe become the norm.</textarea>
+                        </td>
+                        <td>
+                            <textarea></textarea>
+                        </td>
+                        <td>
+                            <textarea></textarea>
+                        </td>
+                        <td>
+                            <textarea></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            function autoGrow(element) {
+                element.style.height = (element.scrollHeight) + 'px';
+            }
+
+            $(document).ready(function() {
+                
+                $('textarea').each(function() {
+                    autoGrow(this);
+                });
+            });
+
+            $('textarea').on('keyup', function () {
+                autoGrow(this);
+            });
+
+            
+        </script>
+    </body>
+        
